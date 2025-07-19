@@ -41,11 +41,12 @@ export function Hero() {
             <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1">
               <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center">
                 <Image
-                  src="https://photos.app.goo.gl/5XgZqRAdxC1spzCb8"
+                  src="/sailesh_risal.jpg"
                   alt="Profile"
                   width={300}
                   height={300}
                   className="rounded-full object-cover"
+                  style={{ width: "100%", height: "100%" }}
                 />
               </div>
             </div>
