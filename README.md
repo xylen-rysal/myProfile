@@ -1,30 +1,69 @@
-# Student profile website
+# Student Portfolio Website
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/xylen-rysals-projects/v0-student-profile-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/yex5O2yPuYN)
+## Features
 
-## Overview
+- 🎨 Modern, clean design with dark/light mode support
+- 📱 Fully responsive layout
+- 🚀 Built with Next.js 15 and React 19
+- 💼 Sections for About, Skills, Projects, Internships, and Contact
+- 📧 Working contact form with email integration
+- 🎯 SEO optimized
+- ⚡ Fast loading and optimized performance
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Tech Stack
+
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** Radix UI
+- **Email:** Resend
+- **Deployment:** Vercel
+
+## Getting Started
+
+1. Clone the repository:
+\`\`\`bash
+git clone <your-repo-url>
+cd student-portfolio
+\`\`\`
+
+2. Install dependencies:
+\`\`\`bash
+npm install
+\`\`\`
+
+3. Set up environment variables:
+Create a `.env.local` file and add:
+\`\`\`
+RESEND_API_KEY=your_resend_api_key
+\`\`\`
+
+4. Run the development server:
+\`\`\`bash
+npm run dev
+\`\`\`
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
 
-Your project is live at:
+This project is configured for easy deployment on Vercel:
 
-**[https://vercel.com/xylen-rysals-projects/v0-student-profile-website](https://vercel.com/xylen-rysals-projects/v0-student-profile-website)**
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add your environment variables in Vercel dashboard
+4. Deploy!
 
-## Build your app
+## Contact Form
 
-Continue building your app on:
+The contact form uses Resend for email delivery. Make sure to:
+1. Sign up for a Resend account
+2. Get your API key
+3. Add it to your environment variables
+4. Update the recipient email in `app/actions/contact.ts`
 
-**[https://v0.dev/chat/projects/yex5O2yPuYN](https://v0.dev/chat/projects/yex5O2yPuYN)**
+## License
 
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+MIT License - feel free to use this project for your own portfolio!
