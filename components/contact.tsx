@@ -6,10 +6,26 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle } from "lucide-react"
 import { sendContactMessage } from "@/app/actions/contact"
-import { useActionState } from "react"
+import { useActionState, useEffect, useState } from "react"
 
 export function Contact() {
-  const [state, formAction, isPending] = useActionState(sendContactMessage, { success: false, message: "" })
+  const [state, formAction, isPending] = useActionState(sendContactMessage, null)
+  const [showMessage, setShowMessage] = useState(false)
+
+  // Show message when state changes and hide after 5 seconds for success messages
+  useEffect(() => {
+    if (state && state.message) {
+      setShowMessage(true)
+
+      if (state.success) {
+        const timer = setTimeout(() => {
+          setShowMessage(false)
+        }, 3000)
+
+        return () => clearTimeout(timer)
+      }
+    }
+  }, [state])
 
   return (
     <section id="contact" className="py-20 px-4">
@@ -78,9 +94,9 @@ export function Contact() {
                   disabled={isPending}
                 />
 
-                {state && (
+                {state && state.message && showMessage && (
                   <div
-                    className={`flex items-center gap-2 p-3 rounded-md ${
+                    className={`flex items-center gap-2 p-3 rounded-md transition-opacity duration-300 ${
                       state.success
                         ? "bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400"
                         : "bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400"
