@@ -9,8 +9,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Remove any output: 'export' if it exists
-  // Ensure we're not forcing static export
+  // Ensure dynamic deployment for Server Actions
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['localhost:3000', '*.vercel.app'],
+    },
+  },
 }
 
 export default nextConfig

@@ -3,6 +3,11 @@
   "installCommand": "npm ci",
   "framework": "nextjs",
   "regions": ["iad1"],
+  "functions": {
+    "app/actions/contact.ts": {
+      "maxDuration": 10
+    }
+  },
   "env": {
     "RESEND_API_KEY": "@resend_api_key"
   }
